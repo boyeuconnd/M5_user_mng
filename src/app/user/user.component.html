@@ -1,0 +1,26 @@
+
+<div class="row">
+  <h2>{{ titlePage }}</h2>
+</div>
+
+<table class="table table-striped">
+
+  <thead>
+  <tr>
+    <th scope="col">Idx</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Handle</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let anUser of users;let idx = index">
+    <th scope="row">{{idx+1}}</th>
+    <td>{{anUser.name}}</td>
+    <td>{{anUser.email}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(anUser.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
