@@ -18,6 +18,7 @@
         <th scope="col">Idx</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
+        <th scope="col">Group</th>
         <th scope="col">Handle</th>
       </tr>
       </thead>
@@ -26,6 +27,9 @@
         <th scope="row">{{idx+1}}</th>
         <td>{{anUser.name}}</td>
         <td>{{anUser.email}}</td>
+        <td>
+          <app-group-mng></app-group-mng>
+        </td>
         <td>
           <button class="btn btn-danger" (click)="delete(anUser.id)">Delete</button>
         </td>
