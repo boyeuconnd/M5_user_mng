@@ -1,26 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-4">
+        {{titlePage}}
+      </div>
+      <div class="col-8">
+        <app-input-search (keyword)="search($event)"></app-input-search>
+      </div>
+    </div>
 
-<div class="row">
-  <h2>{{ titlePage }}</h2>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+
+      <thead>
+      <tr>
+        <th scope="col">Idx</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Handle</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let anUser of users;let idx = index">
+        <th scope="row">{{idx+1}}</th>
+        <td>{{anUser.name}}</td>
+        <td>{{anUser.email}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="delete(anUser.id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
 </div>
 
-<table class="table table-striped">
 
-  <thead>
-  <tr>
-    <th scope="col">Idx</th>
-    <th scope="col">Name</th>
-    <th scope="col">Email</th>
-    <th scope="col">Handle</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let anUser of users;let idx = index">
-    <th scope="row">{{idx+1}}</th>
-    <td>{{anUser.name}}</td>
-    <td>{{anUser.email}}</td>
-    <td>
-      <button class="btn btn-danger" (click)="delete(anUser.id)">Delete</button>
-    </td>
-  </tr>
-  </tbody>
-</table>

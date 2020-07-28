@@ -23,6 +23,10 @@ export class UserComponent implements OnInit {
     this.users = this.userService.getUsers();
   }
 
+  getResultList(keyword:string){
+    this.users = this.userService.filerByKeyword(keyword);
+  }
+
   delete(id:number) {
     alert("delete item")
     let newArrayAfterDelete = [];
@@ -32,5 +36,12 @@ export class UserComponent implements OnInit {
       }
     });
     this.users = newArrayAfterDelete;
+  }
+
+  search(event) {
+    let search_value:string = event;
+    return (search_value)? this.getResultList(event) : this.getAllUser();
+
+
   }
 }
