@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {IUser} from './IUser/iuser';
 import {UserService} from '../user.service';
-import {MenuComponent} from '../core/menu/menu.component';
+
+import {IGroup} from '../core/group-mng/IGroup/igroup';
+import {GroupService} from '../core/group-mng/service/group.service';
 
 @Component({
   selector: 'app-user',
@@ -11,12 +13,19 @@ import {MenuComponent} from '../core/menu/menu.component';
 export class UserComponent implements OnInit {
   titlePage = 'User list';
   users: IUser[] = [];
+  groupList: IGroup[];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private groupService: GroupService) {
   }
 
   ngOnInit(): void {
     this.getAllUser();
+    this.getGroupList();
+  }
+
+  getGroupList(){
+    this.groupList = this.groupService.getGroupList();
   }
 
   getAllUser() {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IGroup} from './IGroup/igroup';
+import {GroupService} from './service/group.service';
 
 @Component({
   selector: 'app-group-mng',
@@ -8,24 +9,13 @@ import {IGroup} from './IGroup/igroup';
 })
 export class GroupMngComponent implements OnInit {
 
-  listGroup: IGroup[] = [
-    {
-      name: 'Admin'
-    },
-    {
-      name: 'Customer'
-    },
-    {
-      name: 'Staff'
-    }
 
-  ]
-
-  constructor() { }
+  constructor(private groupService: GroupService) { }
 
   ngOnInit(): void {
   }
 
+  groupList:IGroup[] = this.groupService.getGroupList();
 
 
 }

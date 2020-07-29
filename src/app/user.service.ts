@@ -10,16 +10,19 @@ export class UserService {
       id: 1,
       name: 'name1',
       email: 'email1@gmail.com',
+      group_id: 1,
     },
     {
       id: 2,
       name: 'name2',
-      email: 'email2@gmail.com'
+      email: 'email2@gmail.com',
+      group_id: 2,
     },
     {
       id: 3,
       name: 'name3',
-      email: 'email3@gmail.com'
+      email: 'email3@gmail.com',
+      group_id: 3
     }
 
   ];
@@ -36,5 +39,10 @@ export class UserService {
     return this.users.filter(user => {
       return user.name.indexOf(keyword) !== -1;
     });
+  }
+
+  add(user:IUser):IUser{
+    this.users.push(user)
+    return user;
   }
 }

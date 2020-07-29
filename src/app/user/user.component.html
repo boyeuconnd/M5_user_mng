@@ -11,6 +11,7 @@
 
   </div>
   <div class="card-body">
+    <button class="btn btn-primary" routerLink="add">Create</button>
     <table class="table table-striped">
 
       <thead>
@@ -27,9 +28,9 @@
         <th scope="row">{{idx+1}}</th>
         <td>{{anUser.name}}</td>
         <td>{{anUser.email}}</td>
-        <td>
-          <app-group-mng></app-group-mng>
-        </td>
+        <ng-container *ngFor="let group of groupList">
+          <td *ngIf="anUser.group_id== group.id">{{group.name}}</td>
+        </ng-container>
         <td>
           <button class="btn btn-danger" (click)="delete(anUser.id)">Delete</button>
         </td>
