@@ -6,6 +6,7 @@ import { MenuComponent } from './core/menu/menu.component';
 import { UserComponent } from './user/user.component';
 import { InputSearchComponent } from './core/input-search/input-search.component';
 import { GroupMngComponent } from './core/group-mng/group-mng.component';
+import { AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,11 @@ import { GroupMngComponent } from './core/group-mng/group-mng.component';
     MenuComponent,
     UserComponent,
     InputSearchComponent,
-    GroupMngComponent
+    GroupMngComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
