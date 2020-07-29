@@ -25,14 +25,15 @@
       </thead>
       <tbody>
       <tr *ngFor="let anUser of users;let idx = index">
-        <th scope="row">{{idx+1}}</th>
+        <th scope="row">{{idx + 1}}</th>
         <td>{{anUser.name}}</td>
         <td>{{anUser.email}}</td>
         <ng-container *ngFor="let group of groupList">
           <td *ngIf="anUser.group_id== group.id">{{group.name}}</td>
         </ng-container>
         <td>
-          <button class="btn btn-danger" (click)="delete(anUser.id)">Delete</button>
+          <button class="btn btn-danger mr-2" (click)="delete(anUser.id)">Delete</button>
+          <button class="btn btn-success" [routerLink]="'edit/'+anUser.id">Edit</button>
         </td>
       </tr>
       </tbody>

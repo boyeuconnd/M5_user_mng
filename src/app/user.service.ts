@@ -35,6 +35,15 @@ export class UserService {
 
   }
 
+  getUserById(id:number):IUser{
+    for(let idx = 0;idx< this.users.length;idx++){
+      if(this.users[idx].id == id){
+        return this.users[idx]
+
+      }
+    }
+  }
+
   public filerByKeyword(keyword: string) {
     return this.users.filter(user => {
       return user.name.indexOf(keyword) !== -1;

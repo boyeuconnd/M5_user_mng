@@ -9,6 +9,7 @@ import { GroupMngComponent } from './core/group-mng/group-mng.component';
 import { AppRoutingModule} from './app-routing.module';
 import { UserAddComponent } from './user/add/user-add/user-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { EditComponent } from './user/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     InputSearchComponent,
     GroupMngComponent,
     UserAddComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

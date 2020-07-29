@@ -22,7 +22,7 @@ export class UserAddComponent implements OnInit {
   ngOnInit(): void {
     this.newUserForm = this.formBuilder.group({
       id:['',[Validators.required]],
-      name:['',[Validators.required,Validators.minLength(6)]],
+      name:['',[Validators.required,Validators.minLength(4)]],
       email:['',[Validators.required,Validators.email]],
       group_id:['2']
     })
