@@ -44,6 +44,14 @@ export class UserService {
     }
   }
 
+  editUserById(user:IUser){
+    for(let idx = 0; idx<this.users.length;idx++){
+      if(this.users[idx].id == user.id){
+        this.users[idx] = user;
+      }
+    }
+  }
+
   public filerByKeyword(keyword: string) {
     return this.users.filter(user => {
       return user.name.indexOf(keyword) !== -1;

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {GroupService} from '../../core/group-mng/service/group.service';
 import {IGroup} from '../../core/group-mng/IGroup/igroup';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {IUser} from '../IUser/iuser';
 import {UserService} from '../../user.service';
 
@@ -24,7 +24,8 @@ export class EditComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private groupService: GroupService,
               private activatedRoute: ActivatedRoute,
-              private userService: UserService) {
+              private userService: UserService,
+              private router:Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.editUserId = paramMap.get('id');
       this.editUser = this.userService.getUserById(+this.editUserId)
@@ -52,6 +53,14 @@ export class EditComponent implements OnInit {
 
   get email(){
     return this.editUserForm.get('email');
+  }
+
+  editUserById() {
+    let newUser = this.editUserForm.value;
+    this.userService.editUserById(newUser);
+    this.router.navigate(['user'])
+    console.log(this.userService.getUsers())
+
   }
 
 
