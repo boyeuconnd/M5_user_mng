@@ -10,6 +10,8 @@ import { AppRoutingModule} from './app-routing.module';
 import { UserAddComponent } from './user/add/user-add/user-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { EditComponent } from './user/edit/edit.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+// import { PaginationControlsComponent } from './core/pagination-controls/pagination-controls.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { EditComponent } from './user/edit/edit.component';
     GroupMngComponent,
     UserAddComponent,
     EditComponent,
+    // PaginationControlsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

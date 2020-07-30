@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
   titlePage = 'User list';
   users: IUser[] = [];
   groupList: IGroup[];
-
+  page: number = 1;
   constructor(private userService: UserService,
               private groupService: GroupService) {
   }

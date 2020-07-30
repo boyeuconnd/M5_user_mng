@@ -23,7 +23,76 @@ export class UserService {
       name: 'name3',
       email: 'email3@gmail.com',
       group_id: 3
-    }
+    },
+    {
+      id: 4,
+      name: 'hong doan',
+      email: 'doan@codegym.vn',
+      group_id: 3
+    },
+    {
+      id: 5,
+      name: 'dang pham',
+      email: 'dangpham@codegym.vn',
+      group_id: 2
+    },
+    {
+      id: 6,
+      name: 'duc trung',
+      email: 'trungho@codegym.vn',
+      group_id: 3
+    },
+    {
+      id: 7,
+      name: 'vinh vat vo',
+      email: 'trungho@codegym.vn',
+      group_id: 3
+    },
+    {
+      id: 8,
+      name: 'thi thuy',
+      email: 'test-email-8@codegym.vn',
+      group_id: 3
+    },
+    {
+      id: 9,
+      name: 'van bang',
+      email: 'test-email-5@codegym.vn',
+      group_id: 3
+    },
+    {
+      id: 10,
+      name: 'khuat phong',
+      email: 'test-email-7@codegym.vn',
+      group_id: 3
+    },
+    {
+      id: 11,
+      name: 'van tuan',
+      email: 'vantuan@codegym.vn',
+      group_id: 3
+    },
+    {
+      id: 12,
+      name: 'le hieu',
+      email: 'hieule@codegym.vn',
+      group_id: 3
+    },    {
+      id: 13,
+      name: 'test name 3',
+      email: 'test-email-1@codegym.vn',
+      group_id: 3
+    },    {
+      id: 14,
+      name: 'test name 1',
+      email: 'test-email-2@codegym.vn',
+      group_id: 3
+    },    {
+      id: 15,
+      name: 'test name 2',
+      email: 'test-email-3@codegym.vn',
+      group_id: 3
+    },
 
   ];
 
