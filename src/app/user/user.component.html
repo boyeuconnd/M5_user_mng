@@ -11,7 +11,19 @@
 
   </div>
   <div class="card-body">
-    <button class="btn btn-primary" routerLink="add">Create</button>
+    <div class="d-flex ">
+      <button class="mr-auto btn btn-primary" routerLink="add">Create</button>
+      <label class="align-self-end" for="item-per-page">Items per page</label>
+      <div class="ml-3">
+        <select [(ngModel)]="itemPerPage" class="form-control" id="item-per-page">
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+      </div>
+    </div>
     <table class="table table-striped">
 
       <thead>
@@ -26,7 +38,7 @@
       <tbody>
       <tr *ngFor="let anUser of users |paginate:{
         id:'user-list',
-        itemsPerPage: 3,
+        itemsPerPage: itemPerPage,
         currentPage:page
       };let idx = index ">
         <th scope="row">{{idx + 1}}</th>

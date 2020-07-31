@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
   users: IUser[] = [];
   groupList: IGroup[];
   page: number = 1;
+  itemPerPage =3;
   constructor(private userService: UserService,
               private groupService: GroupService) {
   }
